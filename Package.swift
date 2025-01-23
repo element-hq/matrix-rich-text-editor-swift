@@ -1,8 +1,8 @@
 // swift-tools-version: 5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
-let checksum = "642dec9e2ce6c2d35d1b2bb23ec30e0900ac44c03949fb04a8b7c23cf4d7fe0e"
-let version = "2.38.1"
+let checksum = "853b7bd96f21471d4f2e3da22506bb1430c6045aa5435aff107d3db5452bd4ef"
+let version = "2.38.2"
 let url = "https://github.com/element-hq/matrix-rich-text-editor-swift/releases/download/\(version)/WysiwygComposerFFI.xcframework.zip"
 let package = Package(
     name: "WysiwygComposer",
