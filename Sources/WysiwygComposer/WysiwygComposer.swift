@@ -1946,6 +1946,7 @@ public enum PatternKey {
     case slash
     case custom(String
     )
+    case colon
 }
 
 public struct FfiConverterTypePatternKey: FfiConverterRustBuffer {
@@ -1962,6 +1963,8 @@ public struct FfiConverterTypePatternKey: FfiConverterRustBuffer {
 
         case 4: return try .custom(FfiConverterString.read(from: &buf)
             )
+
+        case 5: return .colon
 
         default: throw UniffiInternalError.unexpectedEnumCase
         }
@@ -1981,6 +1984,9 @@ public struct FfiConverterTypePatternKey: FfiConverterRustBuffer {
         case let .custom(v1):
             writeInt(&buf, Int32(4))
             FfiConverterString.write(v1, into: &buf)
+
+        case .colon:
+            writeInt(&buf, Int32(5))
         }
     }
 }
